@@ -5,24 +5,51 @@
 namespace tubs
 {
 
-ConsoleTableChart::ConsoleTableChart()
+ConsoleTableChart::ConsoleTableChart(std::string title)
 {
-
+    this->_title = title;
+    this->_color = tubs::color::WHITE;
 }
 
 void ConsoleTableChart::draw(double value)
 {
-    system("clear");
+    _appendValue(value);
+    _prepareDrawing();
+    _printHeader();
+    _printValues();
+    _finishDrawing();
+}
 
-    if(values.size() == 5)
-        values.pop_front();
+void ConsoleTableChart::_printHeader()
+{
+    std::cout << "=========== TABLE CHART ===========\n"; 
+    std::cout << "Time recorded" << "\t\t" << this->_title << std::endl;
+}
 
-    values.push_back(std::pair(time::current_time_and_date(), value));
-
-
-    for(auto& value : values) {
-        std::cout << value.first << "  " << value.second << "\n";
+void ConsoleTableChart::_printValues()
+{
+    for(auto& value : _values) {
+        std::cout << value.first << "\t" << value.second << "\n";
     }
+}
+
+void ConsoleTableChart::_appendValue(double value)
+{
+    if(_values.size() == 5)
+        _values.pop_front();
+
+    _values.push_back(std::pair(time::current_time_and_date(), value));
+}
+
+void ConsoleTableChart::_prepareDrawing()
+{
+    system("clear");
+    std::cout << this->_color;
+}
+
+void ConsoleTableChart::_finishDrawing()
+{
+    std::cout << tubs::color::RESET;
 }
 
 }
