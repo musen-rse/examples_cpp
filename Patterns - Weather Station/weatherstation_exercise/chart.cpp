@@ -20,6 +20,16 @@ void ConsoleTableChart::draw(double value)
     _finishDrawing();
 }
 
+void ConsoleTableChart::setColor(std::string color)
+{
+    this->_color = color;
+}
+
+std::string ConsoleTableChart::getColor()
+{
+    return this->_color;
+}
+
 void ConsoleTableChart::_printHeader()
 {
     std::cout << "=========== TABLE CHART ===========\n"; 
@@ -43,7 +53,6 @@ void ConsoleTableChart::_appendValue(double value)
 
 void ConsoleTableChart::_prepareDrawing()
 {
-    system("clear");
     std::cout << this->_color;
 }
 

@@ -25,6 +25,8 @@ class ConsoleTableChart
 public:
     ConsoleTableChart(std::string title);
     void draw(double value);
+    void setColor(std::string color);
+    std::string getColor();
 
 private:
     void _printHeader();
