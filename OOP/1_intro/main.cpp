@@ -1,18 +1,20 @@
 #include <string>
 #include <iostream>
 
+
+
 class Circle
 {
 public:
-    void translate(float dx, float dy)
+    void translate(double dx, double dy)
     {
-        this->center_x = this->center_x + dx;
-        this->center_y = this->center_y + dy;
+        center_x = center_x + dx;
+        center_y = center_y + dy;
     }
 
-    void scale(float factor)
+    void scale(double factor)
     {
-        this->radius = this->radius * factor;
+        radius = radius * factor;
     }
 
     void draw()
@@ -27,28 +29,30 @@ public:
     std::string color = "red";
 
 private:
-    float center_x = 0.0;
-    float center_y = 0.0;
-    float radius = 1.0;
+    double center_x = 0.0;
+    double center_y = 0.0;
+    double radius = 1.0;
 };
-
 
 
 /*
 / Application
 */
-int main() {
+int main()
+{
+    Circle* circle = new Circle();
 
-    Circle circle;
-    circle.draw();
+    circle->draw();
 
-    circle.translate(2, 2);
+    circle->translate(2, 2);
 
-    circle.draw();
+    circle->draw();
 
-    circle.scale(3.5);
+    circle->scale(3.5);
 
-    circle.draw();
+    circle->draw();
+
+    delete circle;
 
     return 0;
 }

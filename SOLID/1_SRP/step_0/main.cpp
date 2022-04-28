@@ -29,7 +29,10 @@ class GraphicalApplication
 
     void run()
     {
-        rectangle.draw();
+        rectangle.draw(color::RED);
+        rectangle.draw(color::BLUE);
+        rectangle.draw(color::YELLOW);
+        rectangle.draw(color::GREEN);
     }
 
     private:

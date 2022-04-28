@@ -55,6 +55,7 @@ struct QueenAnt : public Ant
     std::vector<std::shared_ptr<Ant>> ants;
 };
 
+
 int main()
 {
     std::vector<std::shared_ptr<Ant>> ants;
@@ -65,4 +66,6 @@ int main()
 
     QueenAnt queen(ants);
     queen.doYourJob();
+
+    return 0;
 }

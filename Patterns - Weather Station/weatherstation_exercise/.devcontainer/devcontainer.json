@@ -12,5 +12,10 @@
         "xaver.clang-format",
         "notskm.clang-tidy",
         "ms-vscode.cmake-tools"
-    ]
+    ],
+    "settings": {
+        "cmake.copyCompileCommands": "", // hotfix to not override compile_commands.json with empty file
+        "cmake.exportCompileCommandsFile": true,
+        "cmake.configureOnEdit": false
+    }
 }
