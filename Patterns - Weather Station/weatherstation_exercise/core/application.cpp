@@ -1,7 +1,6 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include <termios.h>
 
 #include "application.h"
 #include "sensors.h"
