@@ -5,6 +5,7 @@
 #include "application.h"
 #include "sensors.h"
 #include "../charts.h"
+#include "utilities.h"
 
 
 namespace tubs
@@ -36,8 +37,8 @@ void Application::run()
         
 
         while(!this->_stopped) {
-            system("clear");
             tempSensor.measure();
+            screen::clear();
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
     }

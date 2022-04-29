@@ -35,3 +35,16 @@ int numberInRange(int low, int high)
 }
 
 }
+
+namespace tubs::screen
+{
+
+void clear() {
+#ifdef WINDOWS
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+}
