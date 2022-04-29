@@ -11,7 +11,7 @@
 namespace tubs::time
 {
 
-std::string current_time_and_date()
+std::string currentTimeAndDate()
 {
     const auto now = std::chrono::system_clock::now();
     const auto in_time_t = std::chrono::system_clock::to_time_t(now);
@@ -22,5 +22,19 @@ std::string current_time_and_date()
 }
 
 }
+
+namespace tubs::random
+{
+
+int numberInRange(int low, int high)
+{
+    std::random_device rd; // obtain a random number from hardware
+    std::mt19937 gen(rd()); // seed the generator
+    std::uniform_int_distribution<> distr(-5, 5); // define the range
+    return distr(gen);
+}
+
+}
+
 
 #endif // __WEATHERSTATION_UTILITIES_H__

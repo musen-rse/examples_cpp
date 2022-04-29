@@ -10,16 +10,17 @@
 
 namespace tubs
 {
-    Application::Application()
-    {
-        _runLoop = nullptr;
-    }
-    
-    Application::~Application()
-    {
-        if (_runLoop)
-            delete _runLoop;
-    }
+
+Application::Application()
+{
+    _runLoop = nullptr;
+}
+
+Application::~Application()
+{
+    if (_runLoop)
+        delete _runLoop;
+}
 
 
 void Application::run()

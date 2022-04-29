@@ -5,25 +5,23 @@
 
 namespace tubs
 {
-    class ConsoleTableChart;
 
-    class  TemperaturSensor
-    {
-    public:
-        TemperaturSensor();
-        void measure();
-        void setChart(ConsoleTableChart* chart);
-        std::string getName();
-        int getTemperature();
-    
-    private:
-        int _randNumInRange(int low, int high);
-    
-    private:
-        int _temp;
-        std::string _name;
-        ConsoleTableChart* _tableChart;
-    };  
+class ConsoleTableChart;
+
+class  TemperaturSensor
+{
+public:
+    void measure();
+    void setChart(ConsoleTableChart* chart);
+    std::string getName();
+    int getTemperature();
+
+private:
+    int _temp {20};
+    std::string _name;
+    ConsoleTableChart* _tableChart {nullptr};
+};  
+
 }
 
 #endif

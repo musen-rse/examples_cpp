@@ -48,7 +48,7 @@ void ConsoleTableChart::_appendValue(double value)
     if(_values.size() == 5)
         _values.pop_front();
 
-    _values.push_back(std::pair(time::current_time_and_date(), value));
+    _values.push_back(std::pair(time::currentTimeAndDate(), value));
 }
 
 void ConsoleTableChart::_prepareDrawing()
