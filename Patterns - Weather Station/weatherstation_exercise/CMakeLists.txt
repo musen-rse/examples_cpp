@@ -14,4 +14,5 @@ target_sources(${app} PRIVATE
     charts.cpp
     core/sensors.cpp
     core/application.cpp
+    core/utilities.cpp
 )
