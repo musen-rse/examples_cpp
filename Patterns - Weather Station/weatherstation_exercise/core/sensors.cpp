@@ -1,6 +1,6 @@
 #include <random>
 #include "sensors.h"
-#include "../chart.h"
+#include "../charts.h"
 
 namespace tubs
 {

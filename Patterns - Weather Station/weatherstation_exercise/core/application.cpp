@@ -5,7 +5,7 @@
 
 #include "application.h"
 #include "sensors.h"
-#include "../chart.h"
+#include "../charts.h"
 
 
 namespace tubs

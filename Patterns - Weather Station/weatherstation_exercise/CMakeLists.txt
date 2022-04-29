@@ -11,7 +11,7 @@ add_executable(${app})
 
 target_sources(${app} PRIVATE
     main.cpp
-    chart.cpp
+    charts.cpp
     core/sensors.cpp
     core/application.cpp
 )

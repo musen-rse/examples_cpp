@@ -1,5 +1,5 @@
-#ifndef CHART_H
-#define CHART_H
+#ifndef CHARTS_H
+#define CHARTS_H
 
 #include <list>
 #include <string>
