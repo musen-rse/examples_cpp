@@ -13,13 +13,22 @@ namespace tubs
 
 Application::Application()
 {
-    _runLoop = nullptr;
+    _temperatureSensor = new TemperaturSensor();
+    _tableChart = new ConsoleTableChart(_temperatureSensor->getName());
+    _tableChart->setColor(color::BLUE);
+    _temperatureSensor->setChart(_tableChart);
 }
 
 Application::~Application()
 {
     if (_runLoop)
         delete _runLoop;
+
+    if (_temperatureSensor)
+        delete _temperatureSensor;
+
+    if (_tableChart) 
+        delete _tableChart;
 }
 
 
@@ -30,15 +39,9 @@ void Application::run()
 
     _runLoop = new std::thread([this]()
     {
-        TemperaturSensor tempSensor;
-        ConsoleTableChart chart(tempSensor.getName());
-        chart.setColor(color::BLUE);
-        tempSensor.setChart(&chart);
-        
-
         while(!this->_stopped) {
-            tempSensor.measure();
             screen::clear();
+            this->_temperatureSensor->measure();
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
     }
