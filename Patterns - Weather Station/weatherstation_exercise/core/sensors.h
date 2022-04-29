@@ -18,7 +18,6 @@ public:
 
 private:
     int _temp {20};
-    std::string _name;
     ConsoleTableChart* _tableChart {nullptr};
 };  
 
