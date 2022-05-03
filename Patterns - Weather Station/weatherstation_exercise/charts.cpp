@@ -8,7 +8,7 @@ namespace tubs
 ConsoleTableChart::ConsoleTableChart(std::string title)
 {
     this->_title = title;
-    this->_color = tubs::color::WHITE;
+    this->_color = color::WHITE;
 }
 
 void ConsoleTableChart::draw(double value)
@@ -58,7 +58,7 @@ void ConsoleTableChart::_prepareDrawing()
 
 void ConsoleTableChart::_finishDrawing()
 {
-    std::cout << tubs::color::RESET;
+    std::cout << color::RESET;
 }
 
 }

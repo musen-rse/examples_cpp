@@ -17,5 +17,12 @@ int numberInRange(int low, int high);
 
 }
 
+namespace tubs::screen
+{
+
+void clear();
+
+}
+
 
 #endif // __WEATHERSTATION_UTILITIES_H__

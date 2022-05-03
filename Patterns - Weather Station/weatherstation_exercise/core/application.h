@@ -6,6 +6,9 @@
 namespace tubs
 {
 
+class ConsoleTableChart;
+class TemperaturSensor;
+
 class Application
 {
 public:
@@ -15,8 +18,10 @@ public:
     void stop();
 
 private:
-    std::thread* _runLoop;
-    bool _stopped;
+    std::thread* _runLoop {nullptr};
+    bool _stopped {false};
+    ConsoleTableChart* _tableChart {nullptr};
+    TemperaturSensor* _temperatureSensor {nullptr};
 };
 
 }
