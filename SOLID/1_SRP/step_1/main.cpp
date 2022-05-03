@@ -1,30 +1,15 @@
 #include <iostream>
-#include "core/rectangle.h"
-#include "graphicalRectangle.h"
+#include "rectangle.h"
 
+#include "graphical_application.h"
+#include "geometry_application.h"
 
-class GraphicalApplication
-{
-    public:
-    GraphicalApplication(GraphicalRectangle& rectangle) : rectangle(rectangle)
-    {
-
-    }
-
-    void run()
-    {
-        rectangle.draw();
-    }
-
-    private:
-    GraphicalRectangle& rectangle;
-};
 
 int main()
 {
     Rectangle r (3.0, 4.0);
-    GraphicalRectangle g_r(r);
-    GraphicalApplication graphical(g_r);
+
+    GraphicalApplication graphical(r);
     graphical.run();
 
     GeometryApplication geometry(r);

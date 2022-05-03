@@ -8,8 +8,8 @@ class Circle
 public:
     void translate(double dx, double dy)
     {
-        center_x = center_x + dx;
-        center_y = center_y + dy;
+        centerX = centerX + dx;
+        centerY = centerY + dy;
     }
 
     void scale(double factor)
@@ -21,7 +21,7 @@ public:
     {
         std::cout << "Circle with " <<
         "\n color: " << color <<
-        "\n center: " << center_x << ", " << center_y <<
+        "\n center: " << centerX << ", " << centerY <<
         "\n radius: " << radius <<
         "\n";
     }
@@ -29,8 +29,8 @@ public:
     std::string color = "red";
 
 private:
-    double center_x = 0.0;
-    double center_y = 0.0;
+    double centerX = 0.0;
+    double centerY = 0.0;
     double radius = 1.0;
 };
 

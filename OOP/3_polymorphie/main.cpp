@@ -2,41 +2,48 @@
 #include <memory>
 #include <vector>
 
+class Ant;
 
+using AntPr = std::shared_ptr<Ant>;
+using AntList = std::vector<AntPr>;
 
-struct Ant
+class Ant
 {
+public:
     virtual void doYourJob() = 0;
 };
 
-struct SoldierAnt : public Ant
+class SoldierAnt : public Ant
 {
+public:
     void doYourJob()
     {
         std::cout << "SoldierAnt is defending the tribe..." << std::endl;
     }
 };
 
-struct NurseAnt : public Ant
+class NurseAnt : public Ant
 {
+public:
     void doYourJob()
     {
         std::cout << "NurseAnt is feeding the babies..." << std::endl;
     }
 };
 
-struct WorkerAnt : public Ant
+class WorkerAnt : public Ant
 {
+public:
     void doYourJob()
     {
         std::cout << "WorkerAnt is searching for food..." << std::endl;
     }
 };
 
-struct QueenAnt : public Ant
+class QueenAnt : public Ant
 {
-    public:
-    QueenAnt(std::vector<std::shared_ptr<Ant>> ants) : ants(ants) {}
+public:
+    QueenAnt(AntList& ants) : ants(ants) {}
 
     void doMorningRoutine()
     {
@@ -51,21 +58,28 @@ struct QueenAnt : public Ant
         this->doMorningRoutine();
     }
 
-    private:
-    std::vector<std::shared_ptr<Ant>> ants;
+private:
+    AntList& ants;
 };
 
 
 int main()
 {
-    std::vector<std::shared_ptr<Ant>> ants;
+    AntList ants;
 
     ants.push_back(std::make_shared<SoldierAnt>());
     ants.push_back(std::make_shared<WorkerAnt>());
     ants.push_back(std::make_shared<NurseAnt>());
+    // ants.push_back(new WorkerAnt());
+    // ants.push_back(new NurseAnt());
 
     QueenAnt queen(ants);
+
+    // only works when lists is passed as a reference to QueenAnt
+    ants.push_back(std::make_shared<WorkerAnt>());
+
     queen.doYourJob();
+
 
     return 0;
 }

@@ -1,25 +1,26 @@
 #include <string>
 #include <iostream>
 
+
 class Circle
 {
 public:
-    void translate(float dx, float dy)
+    void translate(double dx, double dy)
     {
-        this->center_x = this->center_x + dx;
-        this->center_y = this->center_y + dx;
+        centerX += dx;
+        centerY += dx;
     }
 
-    void scale(float factor)
+    void scale(double factor)
     {
-        this->radius = this->radius * factor;
+        radius *= factor;
     }
 
     void draw()
     {
         std::cout << "Circle with " <<
         "\n color: " << color <<
-        "\n center: " << center_x << ", " << center_y <<
+        "\n center: " << centerX << ", " << centerY <<
         "\n radius: " << radius <<
         "\n";
     }
@@ -27,75 +28,10 @@ public:
     std::string color = "red";
 
 private:
-    float center_x = 0.0;
-    float center_y = 0.0;
-    float radius = 1.0;
+    double centerX = 0.0;
+    double centerY = 0.0;
+    double radius = 1.0;
 };
-
-
-class Square
-{
-public:
-    void translate(float dx, float dy)
-    {
-        this->center_x = this->center_x + dx;
-        this->center_y = this->center_y + dy;
-    }
-
-    void scale(float factor)
-    {
-        this->length = this->length * factor;
-    }
-
-    void draw()
-    {
-        std::cout << "Circle with " <<
-        "\n color: " << color <<
-        "\n center: " << center_x << ", " << center_y <<
-        "\n radius: " << radius <<
-        "\n";
-    }
-
-    std::string color = "red";
-
-private:
-    float center_x = 0.0;
-    float center_y = 0.0;
-    float length = 1.0;
-};
-
-
-class Triangle
-{
-public:
-    void translate(float dx, float dy)
-    {
-        this->center_x = this->center_x + dx;
-        this->center_y = this->center_y + dx;
-    }
-
-    void scale(float factor)
-    {
-        this->radius = this->radius * factor;
-    }
-
-    void draw()
-    {
-        std::cout << "Circle with " <<
-        "\n color: " << color <<
-        "\n center: " << center_x << ", " << center_y <<
-        "\n radius: " << radius <<
-        "\n";
-    }
-
-    std::string color = "red";
-
-private:
-    float center_x = 0.0;
-    float center_y = 0.0;
-    float radius = 1.0;
-};
-
 
 
 
