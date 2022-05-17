@@ -1,13 +1,19 @@
 #ifndef SHAPES_H
 #define SHAPES_H
 
-struct Shape { virtual ~Shape() {} };
+enum class ShapeType {circle, square};
+
+class Shape
+{
+public:
+    ShapeType shapeType;
+};
 
 class Circle : public Shape
 {
-    public:
+public:
     Circle(int radius) : radius(radius) {
-
+        shapeType = ShapeType::circle;
     }
 
     int getRadius() const
@@ -15,15 +21,15 @@ class Circle : public Shape
         return radius;
     }
 
-    private:
+private:
     int radius;
 };
 
 class Square : public Shape
 {
-    public:
+public:
     Square(int length) : length(length) {
-
+        shapeType = ShapeType::square;
     }
 
     int getLength() const
@@ -31,7 +37,7 @@ class Square : public Shape
         return length;
     }
 
-    private:
+private:
     int length;
 };
 

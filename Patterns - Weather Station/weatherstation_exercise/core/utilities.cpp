@@ -1,7 +1,7 @@
 #include "utilities.h"
 #include <chrono>
 #include <ctime>   // localtime
-#include <sstream> 
+#include <sstream>
 #include <iomanip> // put_time
 #include <string>
 #include <iostream>
@@ -30,7 +30,7 @@ int numberInRange(int low, int high)
 {
     std::random_device rd; // obtain a random number from hardware
     std::mt19937 gen(rd()); // seed the generator
-    std::uniform_int_distribution<> distr(-5, 5); // define the range
+    std::uniform_int_distribution<> distr(low, high); // define the range
     return distr(gen);
 }
 
