@@ -16,9 +16,7 @@ void BarChart::draw()
     window->clear();
     std::stringstream output;
 
-    auto values = data->values;
-
-    for(const auto& v : values) {
+    for(const auto& v : data->getValues()) {
         output << v.first << " \t";
         for(int i = 0; i < v.second; i++) {
             output << "#";

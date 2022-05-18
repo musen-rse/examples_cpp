@@ -23,6 +23,11 @@ namespace tubs::model
             chart->draw();
     }
 
+    std::map<std::string, int> Data::getValues()
+    {
+        return values;
+    }
+
     void Data::addChart(ui::Chart* chart)
     {
         this->charts.push_back(chart);

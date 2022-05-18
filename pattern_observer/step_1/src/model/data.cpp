@@ -24,6 +24,11 @@ namespace tubs::model
         barChart->draw();
     }
 
+    std::map<std::string, int> Data::getValues()
+    {
+        return values;
+    }
+
     void Data::addTableChart(ui::TableChart* chart)
     {
         this->tableChart = chart;

@@ -23,9 +23,11 @@ public:
     void addTableChart(ui::TableChart* chart);
     void addBarChart(ui::BarChart* chart);
 
-public:
-    std::map<std::string, int> values;
+    std::map<std::string, int> getValues();
+
 private:
+    std::map<std::string, int> values;
+
     ui::TableChart* tableChart;
     ui::BarChart* barChart;
 };

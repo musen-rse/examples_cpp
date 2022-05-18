@@ -22,9 +22,10 @@ public:
     void change(std::string key, int delta);
     void addChart(ui::Chart* chart);
 
-public:
-    std::map<std::string, int> values;
+    std::map<std::string, int> getValues();
+
 private:
+    std::map<std::string, int> values;
     std::vector<ui::Chart*> charts;
 };
 

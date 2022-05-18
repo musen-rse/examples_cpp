@@ -18,9 +18,7 @@ void TableChart::draw()
     std::stringstream output;
 
 
-    auto values = data->values;
-
-    for(const auto& v : values) {
+    for(const auto& v : data->getValues()) {
         output << v.first << " \t| \t" << v.second << "\n";
     }
 
