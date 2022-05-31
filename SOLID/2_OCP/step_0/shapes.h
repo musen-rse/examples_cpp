@@ -3,41 +3,24 @@
 
 enum class ShapeType {circle, square};
 
-class Shape
+struct Shape
 {
-public:
     ShapeType shapeType;
 };
 
-class Circle : public Shape
+struct Circle : public Shape
 {
 public:
-    Circle(int radius) : radius(radius) {
-        shapeType = ShapeType::circle;
-    }
+    Circle(int radius);
 
-    int getRadius() const
-    {
-        return radius;
-    }
-
-private:
     int radius;
 };
 
-class Square : public Shape
+struct Square : public Shape
 {
 public:
-    Square(int length) : length(length) {
-        shapeType = ShapeType::square;
-    }
+    Square(int length);
 
-    int getLength() const
-    {
-        return length;
-    }
-
-private:
     int length;
 };
 

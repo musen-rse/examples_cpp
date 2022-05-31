@@ -35,21 +35,21 @@ class Rectangle
 class Application
 {
     public:
-    Application(std::vector<std::shared_ptr<Rectangle>> rectangles) : rectangles(rectangles)
+    Application(std::vector<Rectangle*> rectangles) : rectangles(rectangles)
     {
 
     }
 
     void run()
     {
-        for (std::shared_ptr<Rectangle>& rectangle : rectangles)
+        for (Rectangle* rectangle : rectangles)
         {
             setSize(rectangle, 3.0, 4.0);
         }
     }
 
     private:
-    void setSize(std::shared_ptr<Rectangle>& rectangle, double width, double height)
+    void setSize(Rectangle* rectangle, double width, double height)
     {
         rectangle->setHeight(height);
         rectangle->setWidth(width);
@@ -64,7 +64,7 @@ class Application
         std::cout << "The area of the rectangle is " << rectangle->area() << "\n";
     }
 
-    std::vector<std::shared_ptr<Rectangle>> rectangles;
+    std::vector<Rectangle*> rectangles;
 };
 
 

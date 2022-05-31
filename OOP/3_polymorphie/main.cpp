@@ -10,6 +10,8 @@ using AntList = std::vector<AntPr>;
 class Ant
 {
 public:
+    // Important: In C++ when using polyorphism the destructor of the base class needs to be declared as virtual
+    virtual ~Ant() {};
     virtual void doYourJob() = 0;
 };
 
@@ -72,14 +74,12 @@ int main()
     ants.push_back(std::make_shared<NurseAnt>());
     // ants.push_back(new WorkerAnt());
     // ants.push_back(new NurseAnt());
-
-    QueenAnt queen(ants);
+    std::shared_ptr<QueenAnt> queen = std::make_shared<QueenAnt>(ants);
 
     // only works when lists is passed as a reference to QueenAnt
     ants.push_back(std::make_shared<WorkerAnt>());
 
-    queen.doYourJob();
-
+    queen->doYourJob();
 
     return 0;
 }

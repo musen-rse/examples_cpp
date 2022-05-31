@@ -15,12 +15,12 @@ const std::string GREEN ("\033[1;32m");
 class GraphicalRectangle
 {
     public:
-    GraphicalRectangle(const Rectangle& rectangle);
+    GraphicalRectangle(Rectangle& rectangle);
 
     void draw(std::string color);
 
     private:
-    const Rectangle& rectangle;
+    Rectangle& rectangle;
 };
 
 #endif
