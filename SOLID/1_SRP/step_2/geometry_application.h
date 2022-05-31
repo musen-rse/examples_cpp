@@ -1,7 +1,7 @@
 #ifndef __GEOMETRY_APPLICATION_H__
 #define __GEOMETRY_APPLICATION_H__
 
-#include "rectangle.h"
+#include "core/rectangle.h"
 
 class GeometryApplication
 {

@@ -1,7 +1,7 @@
 #include "graphical_rectangle.h"
 
 
-GraphicalRectangle::GraphicalRectangle(const Rectangle& rectangle) : rectangle(rectangle)
+GraphicalRectangle::GraphicalRectangle(Rectangle& rectangle) : rectangle(rectangle)
 {
 
 }

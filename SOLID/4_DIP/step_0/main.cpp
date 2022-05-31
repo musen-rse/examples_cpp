@@ -30,7 +30,6 @@ class Button
         } else {
             lamp.lightOff();
         }
-
     }
 
     private:
