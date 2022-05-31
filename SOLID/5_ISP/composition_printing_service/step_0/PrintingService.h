@@ -3,13 +3,8 @@
 
 #include <iostream>
 
-#include "core/PhotoApp.h"
-#include "core/PayrollApp.h"
-#include "core/ShopApp.h"
 
-class PrintingService : public PhotoPrintingService,
-                        public PayrollPrintingService,
-                        public ShopPrintingService
+class PrintingService
 {
 public:
     void printColoredLetter() {
@@ -29,7 +24,7 @@ public:
     }
 
     void printReceipt() {
-        std::cout << "receipt WE TOUCHED THIS!! AGAIN!! !" << std::endl;
+        std::cout << "receipt" << std::endl;
     }
 };
 
