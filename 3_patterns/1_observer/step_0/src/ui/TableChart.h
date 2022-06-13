@@ -1,0 +1,25 @@
+#ifndef table_chart_h
+#define table_chart_h
+
+#include "data.h"
+
+#include "window.h"
+
+namespace tubs::ui
+{
+
+class TableChart
+{
+public:
+    TableChart(model::Data* data, tubs::ui::Window* window);
+    void draw();
+
+private:
+    model::Data* data;
+    tubs::ui::Window* window;
+};
+
+}
+
+
+#endif
