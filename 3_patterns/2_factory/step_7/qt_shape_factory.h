@@ -16,7 +16,7 @@
 #include <QPicture>
 
 
-using DrawShape = std::function<void(QPainter&, const QRectF&)>;
+using DrawShapeFunctor = std::function<void(QPainter&, const QRectF&)>;
 
 void drawEllipse(QPainter& painter, const QRectF& rectangle) {
     painter.drawEllipse(rectangle);
@@ -26,13 +26,24 @@ void drawRect(QPainter& painter, const QRectF& rectangle) {
     painter.drawRect(rectangle);
 }
 
-void drawShape(QString name, DrawShape drawShape)
+void drawTriangle(QPainter& painter, const QRectF& rectangle) {
+    qreal x, y, width, height;
+    rectangle.getRect(&x, &y, &width, &height);
+
+    painter.drawLine(x, y, x, y + height);
+    painter.drawLine(x, y, x + width, y);
+    painter.drawLine(x, y + height, x + width, y);
+}
+
+void drawShape(QString name, DrawShapeFunctor drawShape)
 {
     int argc = 0;
     QApplication qapp (argc, NULL);
     QWidget window;
     window.resize(400, 400);
     window.show();
+    window.setWindowState(Qt::WindowState::WindowActive);
+    window.raise();
     window.setWindowTitle(name);
 
     QPixmap image(500, 500);
@@ -69,6 +80,14 @@ public:
     }
 };
 
+class QtTriangle : public Shape {
+
+    public:
+    void draw() override {
+        drawShape("Triangle", drawTriangle);
+    }
+};
+
 
 class QtShapeFactory : public ShapeFactory {
 public:
@@ -77,13 +96,15 @@ public:
             return new QtSquare();
         } else if (type == "QtCircle") {
             return new QtCircle();
+        } else if (type == "QtTriangle") {
+            return new QtTriangle();
         }
 
         return nullptr;
     }
 
     virtual std::vector<std::string> getShapeTypes() {
-        return {"QtSquare", "QtCircle"};
+        return {"QtSquare", "QtCircle", "QtTriangle"};
     }
 
 

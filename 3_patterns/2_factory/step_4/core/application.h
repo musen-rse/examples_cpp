@@ -24,6 +24,10 @@ public:
             int i;
 
             std::cin >> i;
+
+            if (i < 0 || i > 2 || !std::cin)
+               break;
+
             std::cout << "\n";
             Shape* shape;
             if(i == 0)
@@ -32,8 +36,6 @@ public:
                 shape = shapeFactory->createSquare();
             else if(i == 2)
                 shape = shapeFactory->createTriangle();
-            else
-                break;
 
             if(shape) {
                 shape->draw();

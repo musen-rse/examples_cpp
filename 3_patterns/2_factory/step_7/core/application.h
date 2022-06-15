@@ -28,7 +28,7 @@ public:
 
             std::cin >> i;
 
-            if (i < 0 || i >= shapeTypes.size())
+            if (i < 0 || i >= shapeTypes.size() || !std::cin)
                 break;
 
            Shape* shape = shapeFactory->create(shapeTypes[i]);

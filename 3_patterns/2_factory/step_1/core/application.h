@@ -33,14 +33,16 @@ public:
             int i;
 
             std::cin >> i;
+
+            if (i < 0 || i > 1 || !std::cin)
+               break;
+
             std::cout << "\n";
             Shape* shape;
             if(i == 0)
                 shape = createCircle();
             else if(i == 1)
                 shape = createSquare();
-            else
-                break;
 
             if(shape) {
                 shape->draw();

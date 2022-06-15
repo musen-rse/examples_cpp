@@ -24,14 +24,16 @@ public:
             int i;
 
             std::cin >> i;
+
+            if (i < 0 || i > 1 || !std::cin)
+               break;
+
             std::cout << "\n";
             Shape* shape;
             if(i == 0)
                 shape = shapeFactory->createCircle();
             else if(i == 1)
                 shape = shapeFactory->createSquare();
-            else
-                break;
 
             if(shape) {
                 shape->draw();
