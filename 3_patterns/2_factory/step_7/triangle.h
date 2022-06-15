@@ -8,7 +8,14 @@ class Triangle : public Shape
 public:
     virtual void draw() override
     {
-        std::cout << "Draw a Triangle."<< std::endl;
+        const int length = 10;
+
+        for (int y = 0; y <= length; y++) {
+            for (int x = 0; x <= y; x++) {
+                std::cout << "* ";
+            }
+            std::cout << "\n";
+       }
     }
 };
 

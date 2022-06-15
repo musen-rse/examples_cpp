@@ -5,16 +5,19 @@
 #include "core/shape_factory.h"
 
 
-class AdvancedSquare : public Shape{
+class AdvancedSquare : public Shape {
 public:
+    void draw() override {
+        std::cout <<  "Advanced Square" << std::endl;
+    }
 
 };
 
 
-class SimpleShapeFactory : public ShapeFactory {
+class AdvancedShapeFactory : public ShapeFactory {
 public:
     Shape* create(std::string type) {
-         if (type == "Square") {
+         if (type == "AdvancedSquare") {
             return new AdvancedSquare();
         }
 
