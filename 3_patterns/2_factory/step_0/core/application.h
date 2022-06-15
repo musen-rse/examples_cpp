@@ -14,30 +14,28 @@ public:
     {
         std::cout << "app is running ...\n\n";
 
-        std::vector<Shape*> shapes;
-
         std::cout << "Circle: 0" << std::endl;
         std::cout << "Square: 1" << std::endl;
         std::cout << "Any other to continue ..." << std::endl;
         while(true) {
-            std::cout << "Choose shape number: ";
+            std::cout << "\nChoose shape number: ";
             int i;
 
             std::cin >> i;
-
+            std::cout << "\n";
+            Shape* shape;
             if(i == 0)
-                shapes.push_back(new Circle());
+                shape = new Circle();
             else if(i == 1)
-                shapes.push_back(new Square());
+                shape = new Square();
             else
                 break;
+
+            if(shape) {
+                shape->draw();
+                delete shape;
+            }
         }
-
-        for(auto shape : shapes)
-            shape->draw();
-
-        for(auto shape : shapes)
-            delete shape;
     };
 
 };

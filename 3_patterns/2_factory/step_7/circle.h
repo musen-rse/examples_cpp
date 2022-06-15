@@ -10,7 +10,6 @@ class Circle : public Shape {
 public:
     virtual void draw() override
     {
-
         const int r = 10;
 
         const int width = r;
@@ -18,7 +17,6 @@ public:
 
         for (int y = width; y >= -width; y -= 2) {
             for (int x = -length; x <= length; x++) {
-
                 if ((int)pth(x, y) == r)
                     std::cout << "*";
                 else

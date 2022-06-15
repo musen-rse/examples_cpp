@@ -31,14 +31,10 @@ public:
             if (i < 0 || i >= shapeTypes.size())
                 break;
 
-            shapes.push_back(shapeFactory->create(shapeTypes[i]));
+           Shape* shape = shapeFactory->create(shapeTypes[i]);
+           shape->draw();
+           delete shape;
         }
-
-        for(auto shape : shapes)
-            shape->draw();
-
-        for(auto shape : shapes)
-            delete shape;
     };
 
 };

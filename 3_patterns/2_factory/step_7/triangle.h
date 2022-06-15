@@ -3,6 +3,8 @@
 
 #include "shape.h"
 
+#include <iostream>
+
 class Triangle : public Shape
 {
 public:

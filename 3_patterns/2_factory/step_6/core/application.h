@@ -23,7 +23,7 @@ public:
         std::cout << "Any other to continue ..." << std::endl;
 
         while(true) {
-            std::cout << "Choose shape number: ";
+            std::cout << "\nChoose shape number: ";
             int i;
 
             std::cin >> i;
@@ -31,14 +31,14 @@ public:
             if (i < 0 || i >= shapeTypes.size())
                 break;
 
-            shapes.push_back(shapeFactory->create(shapeTypes[i]));
+            std::cout << "\n";
+            Shape* shape = shapeFactory->create(shapeTypes[i]);
+
+            if(shape) {
+                shape->draw();
+                delete shape;
+            }
         }
-
-        for(auto shape : shapes)
-            shape->draw();
-
-        for(auto shape : shapes)
-            delete shape;
     };
 
 };

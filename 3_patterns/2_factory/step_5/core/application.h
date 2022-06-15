@@ -19,27 +19,28 @@ public:
         std::cout << "Square: 1" << std::endl;
         std::cout << "Triangle: 2" << std::endl;
         std::cout << "Any other to continue ..." << std::endl;
-        while(true) {
-            std::cout << "Choose shape number: ";
+
+         while(true) {
+            std::cout << "\nChoose shape number: ";
             int i;
 
             std::cin >> i;
-
+            std::cout << "\n";
+            Shape* shape;
             if(i == 0)
-                shapes.push_back(shapeFactory->create("Circle"));
+                shape = shapeFactory->create("Circle");
             else if(i == 1)
-                shapes.push_back(shapeFactory->create("Square"));
+                shape = shapeFactory->create("Square");
             else if(i == 2)
-                shapes.push_back(shapeFactory->create("Triangle"));
+                shape = shapeFactory->create("Triangle");
             else
                 break;
+
+            if(shape) {
+                shape->draw();
+                delete shape;
+            }
         }
-
-        for(auto shape : shapes)
-            shape->draw();
-
-        for(auto shape : shapes)
-            delete shape;
     };
 
 };
