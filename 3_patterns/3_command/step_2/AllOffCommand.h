@@ -1,9 +1,9 @@
 #ifndef ALLOFFCOMMAND_H
 #define ALLOFFCOMMAND_H
 
-#include "core/TV.h"
-#include "core/Playstation.h"
-#include "core/SoundBar.h"
+#include "TV.h"
+#include "Playstation.h"
+#include "SoundBar.h"
 
 
 class AllOffCommand

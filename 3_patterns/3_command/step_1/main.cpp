@@ -1,6 +1,5 @@
-#include "core/TV.h"
-#include "core/SoundBar.h"
-#include "core/Playstation.h"
+#include "TV.h"
+#include "SoundBar.h"
 
 #include "core/RemoteControl.h"
 
@@ -8,7 +7,6 @@
 int main() {
 
     // setup ...
-
     TV* tv = new TV();
     SoundBar* soundBar = new SoundBar();
 

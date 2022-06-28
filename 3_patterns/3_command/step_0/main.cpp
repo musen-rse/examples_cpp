@@ -1,8 +1,5 @@
-#include "core/TV.h"
-#include "core/SoundBar.h"
-#include "core/Playstation.h"
-
-
+#include "TV.h"
+#include "SoundBar.h"
 
 int main() {
 

@@ -1,9 +1,9 @@
 #ifndef PLAYSTATIONCOMMAND_H
 #define PLAYSTATIONCOMMAND_H
 
-#include "core/TV.h"
-#include "core/SoundBar.h"
-#include "core/Playstation.h"
+#include "TV.h"
+#include "SoundBar.h"
+#include "Playstation.h"
 
 
 #include <iostream>

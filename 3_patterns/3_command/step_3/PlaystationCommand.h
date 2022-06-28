@@ -2,9 +2,9 @@
 #define PLAYSTATIONCOMMAND_H
 
 #include "core/Command.h"
-#include "core/TV.h"
-#include "core/Playstation.h"
-#include "core/SoundBar.h"
+#include "TV.h"
+#include "Playstation.h"
+#include "SoundBar.h"
 
 // --
 // Concrete Command implementation which knows their receiver

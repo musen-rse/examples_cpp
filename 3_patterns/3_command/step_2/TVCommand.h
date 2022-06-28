@@ -1,8 +1,8 @@
 #ifndef TVCOMMAND_H
 #define TVCOMMAND_H
 
-#include "core/TV.h"
-#include "core/SoundBar.h"
+#include "TV.h"
+#include "SoundBar.h"
 
 // --
 // Concrete Command implementation which knows their receiver

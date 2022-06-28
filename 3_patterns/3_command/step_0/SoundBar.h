@@ -11,17 +11,17 @@ class SoundBar
 public:
     void switchOn() {
         /* switch on ... */
-        std::cout << "...soundbar switched on" << std::endl;
+        std::cout << "  ...soundbar switched on" << std::endl;
     }
 
     void switchOff() {
         /* switch off ... */
-        std::cout << "...soundbar switched off" << std::endl;
+        std::cout << "  ...soundbar switched off" << std::endl;
     }
 
     void setSoundLevel(int soundlevel) {
         /* switch tv on ... */
-        std::cout << "...sound level set to " << soundlevel << std::endl;
+        std::cout << "  ...sound level set to " << soundlevel << std::endl;
     }
 };
 

@@ -3,13 +3,13 @@
 
 #include <iostream>
 
-#include "core/TV.h"
-#include "core/SoundBar.h"
-#include "core/Playstation.h"
+#include "TV.h"
+#include "SoundBar.h"
+#include "Playstation.h"
 
-#include "../AllOffCommand.h"
-#include "../TVCommand.h"
-#include "../PlaystationCommand.h"
+#include "AllOffCommand.h"
+#include "TVCommand.h"
+#include "PlaystationCommand.h"
 
 
 class RemoteControl
