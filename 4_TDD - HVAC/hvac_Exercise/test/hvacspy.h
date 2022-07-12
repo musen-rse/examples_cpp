@@ -8,7 +8,7 @@ class HVACSpy : public HVAC
     public:
 
     bool isCooling(){
-        return isCurrentlyCooling; 
+        return isCurrentlyCooling;
     }
 
     bool isHeating(){
@@ -24,11 +24,11 @@ class HVACSpy : public HVAC
     }
 
     virtual void stopHeating() override{
-        isCurrentlyHeating = false;        
+        isCurrentlyHeating = false;
     }
 
     virtual void stopCooling() override{
-        isCurrentlyCooling = false;  
+        isCurrentlyCooling = false;
     }
 
     virtual void startCooling() override{
